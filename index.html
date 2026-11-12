@@ -1801,8 +1801,15 @@ document.querySelectorAll('.ptabs').forEach(bar => {
   bar.addEventListener('click', e => {
     const t = e.target.closest('.ptab');
     if (!t) return;
-    bar.querySelectorAll('.ptab').forEach(x => x.classList.remove('on'));
+    const tabs = [...bar.querySelectorAll('.ptab')];
+    const idx = tabs.indexOf(t);
+    tabs.forEach(x => x.classList.remove('on'));
     t.classList.add('on');
+
+    // AI 卡只在首个 tab 出现，切到其他 tab 自动收起
+    const screen = bar.closest('.screen');
+    const wrap = screen && screen.querySelector('.ai-wrap');
+    if (wrap) wrap.style.display = idx === 0 ? '' : 'none';
   });
 });
 
