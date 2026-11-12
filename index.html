@@ -1485,21 +1485,21 @@ function buildMap() {
 /* ============ 内容分析 ============ */
 const WORKS = [
   { d:'2026-11-11 20:28:14', t:'在这场“贬文尊理”的舆论风潮里，自称“理”的一方，到底要达到什么目的？',
-    tags:['[放平心态]','😌','[放平心态]','[放平心态]','[放平心态]'], r:268, c:4, s:9, u:16, l:5 },
+    tags:['[放平心态]','😌','[放平心态]','[放平心态]','[放平心态]'], k:'文章', r:268, c:4, s:9, u:16, l:5 },
   { d:'2026-11-10 19:42:07', t:'为什么越来越多的人开始重读《毛选》？',
-    tags:['[深度长文]'], r:3214, c:62, s:148, u:386, l:92 },
+    tags:['[深度长文]'], k:'文章', r:3214, c:62, s:148, u:386, l:92 },
   { d:'2026-11-09 09:15:33', t:'有哪些看起来普通、实际上极其昂贵的材料？',
-    tags:['[有图]','[已编辑]'], r:2486, c:41, s:96, u:274, l:63 },
+    tags:['[有图]','[已编辑]'], k:'文章', r:2486, c:41, s:96, u:274, l:63 },
   { d:'2026-11-07 22:03:51', t:'如何评价“情绪价值”成为择偶硬指标这件事？',
-    tags:['[放平心态]','😌'], r:1872, c:87, s:54, u:198, l:41 },
+    tags:['[放平心态]','😌'], k:'回答', r:1872, c:87, s:54, u:198, l:41 },
   { d:'2026-11-06 14:27:09', t:'长期主义者到底在坚持什么',
-    tags:['[长文]'], r:1506, c:23, s:71, u:152, l:38 },
+    tags:['[长文]'], k:'想法', r:1506, c:23, s:71, u:152, l:38 },
   { d:'2026-11-04 18:55:20', t:'一个人可以节俭到什么程度？',
-    tags:[], r:1204, c:35, s:42, u:126, l:29 },
+    tags:[], k:'回答', r:1204, c:35, s:42, u:126, l:29 },
   { d:'2026-11-02 11:08:44', t:'为什么很多人宁愿待在大城市，也不愿意回老家？',
-    tags:[], r:986, c:28, s:31, u:94, l:22 },
+    tags:[], k:'想法', r:986, c:28, s:31, u:94, l:22 },
   { d:'2026-10-31 16:40:12', t:'有哪些反常识的经济学结论？',
-    tags:[], r:950, c:19, s:27, u:76, l:18 }
+    tags:[], k:'视频', r:950, c:19, s:27, u:76, l:18 }
 ];
 
 const fmt = n => n.toLocaleString('en-US');
@@ -1507,7 +1507,7 @@ const fmt = n => n.toLocaleString('en-US');
 function renderWorks() {
   const host = document.getElementById('clist');
   host.innerHTML = WORKS.map((w, i) => `
-    <article class="citem">
+    <article class="citem" data-kind="${w.k}">
       <div class="meta">${w.d}</div>
       <h3>${w.t}</h3>
       ${w.tags.length ? `<div class="tags">${w.tags.map(t => `<span>${t}</span>`).join('')}</div>` : '<div style="height:14px"></div>'}
@@ -1620,6 +1620,31 @@ scroller.addEventListener('scroll', () => {
   topbar.classList.toggle('scrolled', scroller.scrollTop > 4);
 }, { passive: true });
 
+
+/* 二级 tab（chips）与 AI 卡的联动：
+   - 账号概览：只有「全部」有卡片
+   - 内容分析：回答/想法/文章近一个月 ≥3 篇才有卡片，视频不提供 */
+function applyOverviewChip() {
+  const chip = document.querySelector('#chips .chip.is-active');
+  const kind = chip ? chip.textContent.trim() : '全部';
+  const wrap = document.querySelector('#panel-overview .ai-wrap');
+  if (wrap) wrap.style.display = kind === '全部' ? '' : 'none';
+}
+
+function applyContentChip() {
+  const chip = document.querySelector('#chips2 .chip.is-active');
+  const kind = chip ? chip.textContent.trim() : '回答';
+  let n = 0;
+  document.querySelectorAll('#clist .citem').forEach(el => {
+    const hit = el.dataset.kind === kind;
+    el.style.display = hit ? '' : 'none';
+    if (hit) n++;
+  });
+  const wrap = document.querySelector('#panel-content .ai-wrap');
+  const eligible = kind !== '视频' && n >= 3;
+  if (wrap) wrap.style.display = eligible ? '' : 'none';
+}
+
 // chips (two rows, one per tab)
 ['chips', 'chips2'].forEach(id => {
   document.getElementById(id).addEventListener('click', e => {
@@ -1627,6 +1652,7 @@ scroller.addEventListener('scroll', () => {
     if (!chip) return;
     document.querySelectorAll('#' + id + ' .chip').forEach(c => c.classList.remove('is-active'));
     chip.classList.add('is-active');
+    if (id === 'chips') applyOverviewChip(); else applyContentChip();
   });
 });
 
@@ -1658,7 +1684,7 @@ function selectTab(i) {
   panelB.classList.toggle('is-active', !overview);
   scroller.scrollTop = 0;
   topbar.classList.remove('scrolled');
-  if (!overview) animateWorks();
+  if (overview) { applyOverviewChip(); } else { animateWorks(); applyContentChip(); }
 }
 
 tabEls.forEach((t, i) => t.addEventListener('click', () => {
