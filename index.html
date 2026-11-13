@@ -247,7 +247,12 @@
   @keyframes itemIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
   /* ---------- AI 数据总结卡 ---------- */
-  .ai-wrap{padding:14px 16px 0}
+  .ai-solo{margin:0 0 12px}
+  .ai-solo.out{margin:0 var(--pad) 12px}
+  .ai-card.solo{padding:13px 14px 10px}
+  .ai-card.solo .ai-slide{flex:none;display:block}
+  .ai-card.solo .ai-note{margin-top:7px}
+  .ai-solo[data-ai="ct"]{margin:14px 16px 10px;padding:0}
   .ai-card{background:#F1F7FF;border:1px solid #E3EEFF;border-radius:14px;padding:14px 14px 11px}
   .ai-track{display:flex;min-height:127px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
   .ai-track::-webkit-scrollbar{display:none;height:0}
@@ -769,34 +774,7 @@
 
         <div class="panel is-active" id="panel-overview">
 
-        <div class="ai-wrap" data-reveal>
-          <section class="ai-card">
-            <div class="ai-track" id="aiTrack">
-            <article class="ai-slide">
-              <h4>作品数据：两篇占一半阅读</h4>
-              <p>48 篇带来 12,486 阅读，前两篇占了 45.6%，其余六篇都在 1,900 以下，篇均只有 260，选题铺得太散。把《毛选》那篇拆成三条主线，一周补三篇，集中在晚八点发，篇均能先到 400。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>互动数据：赞同高，收藏没跟上</h4>
-              <p>赞同率 10.6% 说明观点立得住，收藏率 3.8% 没跟上，读者点头但不打算回头用，评论 299 也印证了这点：话说完了，没留可接的钩子。每篇结尾加一张三步清单，收藏率能往 5% 走。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>关注数据：转粉没问题，留不住人</h4>
-              <p>转粉率 6.4% 高于常见区间，主页这关是通的；取关占比 35.9%，每三个新关注走一个，说明关注后的内容与预期对不上。把选题收在职场与认知两条线，别追热点，一个月后取关占比能回到 25%。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>流量数据：搜索过半，推荐只有一成</h4>
-              <p>搜索带来 53.9%，推荐只有 14.6%，账号靠人找内容活着，平台没主动给量。问题在开头：前三句还在铺背景，读完率撑不住推荐。改成先给结论、单篇压到 1,500 字内，推荐能到 20%，曝光多三成。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>粉丝画像：一线职场男性基本盘</h4>
-              <p>读者八成男性，七成在 25-40 岁，上海、广东、江苏、北京四地占七成，是一线城市的职场人。他们关心决策与思维方式，选题往职场场景靠，另用两篇试校园话题，看收藏率再定。</p>
-            </article>
-            </div>
-            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
-            <div class="ai-dots" id="aiDots"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-          </section>
-        </div>
+        
 
         <!-- 作品数据 -->
         <section class="sec" data-reveal>
@@ -808,6 +786,16 @@
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </button>
           </div>
+
+        <div class="ai-solo" data-ai="ov" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>作品数据：两篇占一半阅读</h4>
+            <p>48 篇带来 12,486 阅读，前两篇占了 45.6%，其余六篇都在 1,900 以下，篇均只有 260，选题铺得太散。把《毛选》那篇拆成三条主线，一周补三篇，集中在晚八点发，篇均能先到 400。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
+        
 
           <div class="cards" data-stagger>
             <div class="card is-active">
@@ -842,6 +830,16 @@
             </button>
           </div>
 
+        <div class="ai-solo" data-ai="ov" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>互动数据：赞同高，收藏没跟上</h4>
+            <p>赞同率 10.6% 说明观点立得住，收藏率 3.8% 没跟上，读者点头但不打算回头用，评论 299 也印证了这点：话说完了，没留可接的钩子。每篇结尾加一张三步清单，收藏率能往 5% 走。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
+        
+
           <div class="cards" data-stagger>
             <div class="card is-active"><div class="k">赞同数</div><div class="v" data-count="1322">1,322</div><div class="s">今日 158</div></div>
             <div class="card"><div class="k">喜欢数</div><div class="v" data-count="308">308</div><div class="s">今日 48</div></div>
@@ -866,6 +864,16 @@
             </button>
           </div>
 
+        <div class="ai-solo" data-ai="ov" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>关注数据：转粉没问题，留不住人</h4>
+            <p>转粉率 6.4% 高于常见区间，主页这关是通的；取关占比 35.9%，每三个新关注走一个，说明关注后的内容与预期对不上。把选题收在职场与认知两条线，别追热点，一个月后取关占比能回到 25%。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
+        
+
           <div class="cards" data-stagger>
             <div class="card is-active"><div class="k">净增关注</div><div class="v" data-count="264">264</div><div class="s">今日 31</div></div>
             <div class="card"><div class="k">新增关注</div><div class="v" data-count="412">412</div><div class="s">今日 63</div></div>
@@ -884,6 +892,16 @@
         <section class="sec tight" data-reveal>
           <div class="group-title">流量数据</div>
         </section>
+
+        <div class="ai-solo out" data-ai="ov" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>流量数据：搜索过半，推荐只有一成</h4>
+            <p>搜索带来 53.9%，推荐只有 14.6%，账号靠人找内容活着，平台没主动给量。问题在开头：前三句还在铺背景，读完率撑不住推荐。改成先给结论、单篇压到 1,500 字内，推荐能到 20%，曝光多三成。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
+        
 
         <!-- 流量来源 -->
         <section class="sec" data-reveal>
@@ -904,6 +922,14 @@
         </section>
 
         <div class="band"></div>
+
+        <div class="ai-solo out" data-ai="ov" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>粉丝画像：一线职场男性基本盘</h4>
+            <p>读者八成男性，七成在 25-40 岁，上海、广东、江苏、北京四地占七成，是一线城市的职场人。他们关心决策与思维方式，选题往职场场景靠，另用两篇试校园话题，看收藏率再定。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
 
         <!-- 性别分布 -->
         <section class="sec" data-reveal>
@@ -971,30 +997,35 @@
 
         <div class="panel" id="panel-content">
           <div class="band" style="margin:0"></div>
-        <div class="ai-wrap" data-reveal>
-          <section class="ai-card">
-            <div class="ai-track" id="aiTrack2">
-            <article class="ai-slide">
-              <h4>开头就把话说死了</h4>
-              <div class="ai-sub">在这场“贬文尊理”的舆论风潮里，自称“理”的一方，到底要达到什么目的？</div>
-              <p>本篇阅读 268，八篇里垫底，赞同率 6.0% 也最低，问题在开头：第一句就把判断撂下，读者还没被说服先起了对抗。把「理性派的三件事」提到第二段，用一句具体场景开场，判断留到论证之后。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>这条线能拆成三篇</h4>
-              <div class="ai-sub">为什么越来越多的人开始重读《毛选》？</div>
-              <p>本篇阅读 3,214、赞同率 12.0%，两项都在八篇里第一，收藏率 4.6% 高于中位，读者当资料存。起作用的是「调查研究、矛盾论、群众路线」这条线，拆成三篇连载，每篇开头点题。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>小标题改成材料名</h4>
-              <div class="ai-sub">有哪些看起来普通、实际上极其昂贵的材料？</div>
-              <p>本篇阅读 2,486 排第二，赞同率 11.0% 也靠前，评论率 1.6% 却低于中位，读完就走的人多。内容是清单结构，问题在段落标题太虚，把小标题直接写成材料名，搜索和扫读都能多接住一批人。</p>
-            </article>
-            </div>
+        
+          <div class="ai-solo" data-ai="ct" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>开头就把话说死了</h4>
+            <div class="ai-sub">在这场“贬文尊理”的舆论风潮里，自称“理”的一方，到底要达到什么目的？</div>
+            <p>本篇阅读 268，八篇里垫底，赞同率 6.0% 也最低，问题在开头：第一句就把判断撂下，读者还没被说服先起了对抗。把「理性派的三件事」提到第二段，用一句具体场景开场，判断留到论证之后。</p></div>
             <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
-            <div class="ai-dots" id="aiDots2"><i class="on"></i><i></i><i></i></div>
           </section>
         </div>
-          <div class="clist" id="clist"></div>
+
+        <div class="ai-solo" data-ai="ct" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>这条线能拆成三篇</h4>
+            <div class="ai-sub">为什么越来越多的人开始重读《毛选》？</div>
+            <p>本篇阅读 3,214、赞同率 12.0%，两项都在八篇里第一，收藏率 4.6% 高于中位，读者当资料存。起作用的是「调查研究、矛盾论、群众路线」这条线，拆成三篇连载，每篇开头点题。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
+        <div class="ai-solo" data-ai="ct" data-reveal>
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>小标题改成材料名</h4>
+            <div class="ai-sub">有哪些看起来普通、实际上极其昂贵的材料？</div>
+            <p>本篇阅读 2,486 排第二，赞同率 11.0% 也靠前，评论率 1.6% 却低于中位，读完就走的人多。内容是清单结构，问题在段落标题太虚，把小标题直接写成材料名，搜索和扫读都能多接住一批人。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
+                <div class="clist" id="clist"></div>
         </div>
 
       </div>
@@ -1627,8 +1658,9 @@ scroller.addEventListener('scroll', () => {
 function applyOverviewChip() {
   const chip = document.querySelector('#chips .chip.is-active');
   const kind = chip ? chip.textContent.trim() : '全部';
-  const wrap = document.querySelector('#panel-overview .ai-wrap');
-  if (wrap) wrap.style.display = kind === '全部' ? '' : 'none';
+  document.querySelectorAll('#panel-overview [data-ai="ov"]').forEach(el => {
+    el.style.display = kind === '全部' ? '' : 'none';
+  });
 }
 
 function applyContentChip() {
@@ -1640,9 +1672,10 @@ function applyContentChip() {
     el.style.display = hit ? '' : 'none';
     if (hit) n++;
   });
-  const wrap = document.querySelector('#panel-content .ai-wrap');
   const eligible = kind !== '视频' && n >= 3;
-  if (wrap) wrap.style.display = eligible ? '' : 'none';
+  document.querySelectorAll('#panel-content [data-ai="ct"]').forEach(el => {
+    el.style.display = eligible ? '' : 'none';
+  });
 }
 
 // chips (two rows, one per tab)
