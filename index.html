@@ -1569,7 +1569,7 @@ const fmt = n => n.toLocaleString('en-US');
 function renderWorks() {
   const host = document.getElementById('clist');
   host.innerHTML = WORKS.map((w, i) => `
-    <article class="citem" data-kind="${w.k}" data-state="${w.ai && w.k === '回答' ? 'shown' : 'hidden'}">
+    <article class="citem" data-kind="${w.k}" data-state="${w.ai && w.k === '回答' && i < 3 ? 'shown' : 'hidden'}">
       <div class="meta"><span class="mt">${w.d}</span>${w.ai ? `<button class="an-btn" type="button" aria-label="分析这篇内容">
           <span class="ico"></span>
           <span class="slot"><span class="txt">分析</span>
