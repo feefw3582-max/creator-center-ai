@@ -252,7 +252,7 @@
   .ai-card.solo{padding:13px 14px 10px}
   .ai-card.solo .ai-slide{flex:none;display:block}
   .ai-card.solo .ai-note{margin-top:7px}
-  .ai-inline{margin:0 16px 10px}
+  .ai-inline{margin:14px 16px 8px}
   .ai-card{background:#F1F7FF;border:1px solid #E3EEFF;border-radius:14px;padding:14px 14px 11px}
   .ai-track{display:flex;min-height:127px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
   .ai-track::-webkit-scrollbar{display:none;height:0}
@@ -1517,9 +1517,9 @@ function renderWorks() {
   host.innerHTML = WORKS.map((w, i) => `
     <article class="citem" data-kind="${w.k}">
       <div class="meta">${w.d}</div>
+      ${w.ai ? `<div class="ai-inline"><section class="ai-card solo"><div class="ai-slide"><h4>${w.ai.t}</h4><p>${w.ai.b}</p></div><div class="ai-note">内容于 2026.11.12 由 AI 生成</div></section></div>` : ''}
       <h3>${w.t}</h3>
       ${w.tags.length ? `<div class="tags">${w.tags.map(t => `<span>${t}</span>`).join('')}</div>` : '<div style="height:14px"></div>'}
-      ${w.ai ? `<div class="ai-inline"><section class="ai-card solo"><div class="ai-slide"><h4>${w.ai.t}</h4><div class="ai-sub">${w.t}</div><p>${w.ai.b}</p></div><div class="ai-note">内容于 2026.11.12 由 AI 生成</div></section></div>` : ''}
       <div class="cstats">
         <div class="cstat"><span class="l">阅读</span><span class="v">${fmt(w.r)}</span></div>
         <div class="cstat"><span class="l">评论</span><span class="v">${fmt(w.c)}</span></div>
