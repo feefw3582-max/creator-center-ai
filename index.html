@@ -226,7 +226,7 @@
   .panel.is-active{display:block}
   .clist{padding-top:2px}
   .citem{padding:0 0 2px}
-  .citem .meta{padding:16px 16px 0;font-size:12px;color:#ADAFB4;letter-spacing:.3px}
+  .citem .meta{padding:14px 16px 0;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#ADAFB4;letter-spacing:.3px}
   .citem h3{
     margin:7px 0 0;padding:0 16px;font-size:16.5px;font-weight:600;line-height:1.55;color:#17181A;
     letter-spacing:.2px;
@@ -255,7 +255,6 @@
   .ai-inline{margin:12px 16px 10px}
 
   /* ---------- 行内分析按钮 ---------- */
-  .ai-row{display:flex;justify-content:flex-end;padding:10px 16px 12px}
   .an-btn{
     appearance:none;border:0;cursor:pointer;height:30px;padding:0 13px 0 9px;
     display:inline-flex;align-items:center;gap:6px;border-radius:999px;
@@ -300,7 +299,7 @@
 
   /* ---------- 显隐状态 ---------- */
   .citem[data-state="hidden"] .ai-inline{display:none}
-  .citem[data-state="shown"] .ai-row{display:none}
+  .citem[data-state="shown"] .meta .an-btn{display:none}
 
   .ai-card{background:#F1F7FF;border:1px solid #E3EEFF;border-radius:14px;padding:14px 14px 11px}
   .ai-track{display:flex;min-height:127px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
@@ -1571,16 +1570,13 @@ function renderWorks() {
   const host = document.getElementById('clist');
   host.innerHTML = WORKS.map((w, i) => `
     <article class="citem" data-kind="${w.k}" data-state="${w.ai && w.k === '回答' ? 'shown' : 'hidden'}">
-      <div class="meta">${w.d}</div>
-      ${w.ai ? `<div class="ai-row">
-        <button class="an-btn" type="button" aria-label="分析这篇内容">
+      <div class="meta"><span class="mt">${w.d}</span>${w.ai ? `<button class="an-btn" type="button" aria-label="分析这篇内容">
           <span class="ico"></span>
           <span class="slot"><span class="txt">分析</span>
             <span class="spin" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>
           </span>
-        </button>
-      </div>
-      <div class="ai-inline">
+        </button>` : ''}</div>
+      ${w.ai ? `<div class="ai-inline">
         <button class="ai-fold" type="button" aria-label="收起分析">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"/></svg>
         </button>
