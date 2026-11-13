@@ -252,7 +252,7 @@
   .ai-card.solo{padding:13px 14px 10px}
   .ai-card.solo .ai-slide{flex:none;display:block}
   .ai-card.solo .ai-note{margin-top:7px}
-  .ai-solo[data-ai="ct"]{margin:14px 16px 10px;padding:0}
+  .ai-inline{margin:0 16px 10px}
   .ai-card{background:#F1F7FF;border:1px solid #E3EEFF;border-radius:14px;padding:14px 14px 11px}
   .ai-track{display:flex;min-height:127px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
   .ai-track::-webkit-scrollbar{display:none;height:0}
@@ -998,34 +998,7 @@
         <div class="panel" id="panel-content">
           <div class="band" style="margin:0"></div>
         
-          <div class="ai-solo" data-ai="ct" data-reveal>
-          <section class="ai-card solo">
-            <div class="ai-slide">            <h4>开头就把话说死了</h4>
-            <div class="ai-sub">在这场“贬文尊理”的舆论风潮里，自称“理”的一方，到底要达到什么目的？</div>
-            <p>本篇阅读 268，八篇里垫底，赞同率 6.0% 也最低，问题在开头：第一句就把判断撂下，读者还没被说服先起了对抗。把「理性派的三件事」提到第二段，用一句具体场景开场，判断留到论证之后。</p></div>
-            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
-          </section>
-        </div>
-
-        <div class="ai-solo" data-ai="ct" data-reveal>
-          <section class="ai-card solo">
-            <div class="ai-slide">            <h4>这条线能拆成三篇</h4>
-            <div class="ai-sub">为什么越来越多的人开始重读《毛选》？</div>
-            <p>本篇阅读 3,214、赞同率 12.0%，两项都在八篇里第一，收藏率 4.6% 高于中位，读者当资料存。起作用的是「调查研究、矛盾论、群众路线」这条线，拆成三篇连载，每篇开头点题。</p></div>
-            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
-          </section>
-        </div>
-
-        <div class="ai-solo" data-ai="ct" data-reveal>
-          <section class="ai-card solo">
-            <div class="ai-slide">            <h4>小标题改成材料名</h4>
-            <div class="ai-sub">有哪些看起来普通、实际上极其昂贵的材料？</div>
-            <p>本篇阅读 2,486 排第二，赞同率 11.0% 也靠前，评论率 1.6% 却低于中位，读完就走的人多。内容是清单结构，问题在段落标题太虚，把小标题直接写成材料名，搜索和扫读都能多接住一批人。</p></div>
-            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
-          </section>
-        </div>
-
-                <div class="clist" id="clist"></div>
+                                          <div class="clist" id="clist"></div>
         </div>
 
       </div>
@@ -1046,24 +1019,19 @@
       </div>
 
       <main class="scroll" id="earn-scroll">
-        <div class="ai-wrap">
-          <section class="ai-card">
-            <div class="ai-track" id="aiTrack3">
-            <article class="ai-slide">
-              <h4>三条收益通路都还空着</h4>
-              <p>累计收益和创作余额都还是 0，7 天曲线也是一条平线。问题不在流量，是收益通路一条都没接上：好物、咨询、赞赏三项全空着。建议先在高阅读回答里开赞赏，门槛最低也最快见效。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>本周先把链路跑通</h4>
-              <p>7 天里每天都是 0，说明挂载动作一次都没发生过。建议把它固定下来：回答结尾加引导，视频挂好物卡，本周先跑 3 篇看有没有第一笔。第一笔很小，但它是后面所有收益的起点。</p>
-            </article>
-            </div>
-            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
-            <div class="ai-dots" id="aiDots3"><i class="on"></i><i></i></div>
-          </section>
-        </div>
+        
         <div class="e-block">
           <div class="e-head"><span class="t">数据总览</span><span class="u">单位：元</span></div>
+          
+
+          <div class="ai-inline">
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>三条收益通路都还空着</h4>
+            <p>累计收益和创作余额都还是 0，7 天曲线也是一条平线。问题不在流量，是收益通路一条都没接上：好物、咨询、赞赏三项全空着。建议先在高阅读回答里开赞赏，门槛最低也最快见效。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
           <div class="e-grid">
             <div class="e-cell">
               <div class="l">今日收益</div>
@@ -1115,6 +1083,14 @@
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
             </button></span>
           </div>
+          <div class="ai-inline">
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>本周先把链路跑通</h4>
+            <p>7 天里每天都是 0，说明挂载动作一次都没发生过。建议把它固定下来：回答结尾加引导，视频挂好物卡，本周先跑 3 篇看有没有第一笔。第一笔很小，但它是后面所有收益的起点。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
           <div class="tbl-wrap">
             <table class="tbl">
               <thead>
@@ -1159,24 +1135,17 @@
       </div>
 
       <main class="scroll" id="fans-scroll">
-        <div class="ai-wrap">
-          <section class="ai-card">
-            <div class="ai-track" id="aiTrack4">
-            <article class="ai-slide">
-              <h4>增长停在 3 个，入口太窄</h4>
-              <p>关注者总数 3，活跃关注者占比 100%，留下的人都很活跃，但 7 天的新增曲线是平的。问题不在内容质量，而在入口太窄：进主页的人没被简介和置顶接住，看完单篇就走了。</p>
-            </article>
-            <article class="ai-slide">
-              <h4>先把主页接住</h4>
-              <p>盘子还小，能做的事反而清楚：把简介第一行改成一句「你帮谁解决什么问题」，再置顶 2 篇代表作。3 个人看着少，但方向对了，从个位数到两位数比你想的快。</p>
-            </article>
-            </div>
-            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
-            <div class="ai-dots" id="aiDots4"><i class="on"></i><i></i></div>
-          </section>
-        </div>
+        
         <div class="e-block">
           <div class="e-head"><span class="t">数据总览</span></div>
+          <div class="ai-inline">
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>增长停在 3 个，入口太窄</h4>
+            <p>关注者总数 3，活跃关注者占比 100%，留下的人都很活跃，但 7 天的新增曲线是平的。问题不在内容质量，而在入口太窄：进主页的人没被简介和置顶接住，看完单篇就走了。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
           <div class="f-grid">
             <div class="f-cell">
               <div class="l">关注者总数</div>
@@ -1212,6 +1181,14 @@
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m7 9 5-5 5 5"/><path d="m7 15 5 5 5-5"/></svg>
             </button></span>
           </div>
+          <div class="ai-inline">
+          <section class="ai-card solo">
+            <div class="ai-slide">            <h4>先把主页接住</h4>
+            <p>盘子还小，能做的事反而清楚：把简介第一行改成一句「你帮谁解决什么问题」，再置顶 2 篇代表作。3 个人看着少，但方向对了，从个位数到两位数比你想的快。</p></div>
+            <div class="ai-note">内容于 2026.11.12 由 AI 生成</div>
+          </section>
+        </div>
+
           <div class="chart" id="fchart" style="margin-top:10px"></div>
           <div class="f-legend">
             <span class="it on"><i></i>新增关注者</span>
@@ -1516,11 +1493,11 @@ function buildMap() {
 /* ============ 内容分析 ============ */
 const WORKS = [
   { d:'2026-11-11 20:28:14', t:'在这场“贬文尊理”的舆论风潮里，自称“理”的一方，到底要达到什么目的？',
-    tags:['[放平心态]','😌','[放平心态]','[放平心态]','[放平心态]'], k:'文章', r:268, c:4, s:9, u:16, l:5 },
+    tags:['[放平心态]','😌','[放平心态]','[放平心态]','[放平心态]'], k:'文章', r:268, c:4, s:9, u:16, l:5 , ai:{t:"开头就把话说死了",b:"本篇阅读 268，八篇里垫底，赞同率 6.0% 也最低，问题在开头：第一句就把判断撂下，读者还没被说服先起了对抗。把「理性派的三件事」提到第二段，用一句具体场景开场，判断留到论证之后。"} },
   { d:'2026-11-10 19:42:07', t:'为什么越来越多的人开始重读《毛选》？',
-    tags:['[深度长文]'], k:'文章', r:3214, c:62, s:148, u:386, l:92 },
+    tags:['[深度长文]'], k:'文章', r:3214, c:62, s:148, u:386, l:92 , ai:{t:"这条线能拆成三篇",b:"本篇阅读 3,214、赞同率 12.0%，两项都在八篇里第一，收藏率 4.6% 高于中位，读者当资料存。起作用的是「调查研究、矛盾论、群众路线」这条线，拆成三篇连载，每篇开头点题。"} },
   { d:'2026-11-09 09:15:33', t:'有哪些看起来普通、实际上极其昂贵的材料？',
-    tags:['[有图]','[已编辑]'], k:'文章', r:2486, c:41, s:96, u:274, l:63 },
+    tags:['[有图]','[已编辑]'], k:'文章', r:2486, c:41, s:96, u:274, l:63 , ai:{t:"小标题改成材料名",b:"本篇阅读 2,486 排第二，赞同率 11.0% 也靠前，评论率 1.6% 却低于中位，读完就走的人多。内容是清单结构，问题在段落标题太虚，把小标题直接写成材料名，搜索和扫读都能多接住一批人。"} },
   { d:'2026-11-07 22:03:51', t:'如何评价“情绪价值”成为择偶硬指标这件事？',
     tags:['[放平心态]','😌'], k:'回答', r:1872, c:87, s:54, u:198, l:41 },
   { d:'2026-11-06 14:27:09', t:'长期主义者到底在坚持什么',
@@ -1542,6 +1519,7 @@ function renderWorks() {
       <div class="meta">${w.d}</div>
       <h3>${w.t}</h3>
       ${w.tags.length ? `<div class="tags">${w.tags.map(t => `<span>${t}</span>`).join('')}</div>` : '<div style="height:14px"></div>'}
+      ${w.ai ? `<div class="ai-inline"><section class="ai-card solo"><div class="ai-slide"><h4>${w.ai.t}</h4><div class="ai-sub">${w.t}</div><p>${w.ai.b}</p></div><div class="ai-note">内容于 2026.11.12 由 AI 生成</div></section></div>` : ''}
       <div class="cstats">
         <div class="cstat"><span class="l">阅读</span><span class="v">${fmt(w.r)}</span></div>
         <div class="cstat"><span class="l">评论</span><span class="v">${fmt(w.c)}</span></div>
@@ -1672,10 +1650,7 @@ function applyContentChip() {
     el.style.display = hit ? '' : 'none';
     if (hit) n++;
   });
-  const eligible = kind !== '视频' && n >= 3;
-  document.querySelectorAll('#panel-content [data-ai="ct"]').forEach(el => {
-    el.style.display = eligible ? '' : 'none';
-  });
+  // 卡片跟着各自的列表项走，不需要单独控制显示
 }
 
 // chips (two rows, one per tab)
